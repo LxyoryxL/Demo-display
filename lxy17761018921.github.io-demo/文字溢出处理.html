@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .p1 {
+        /* 单行文本溢出点点点 */
+        width: 400px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+    }
+
+    /* 多行文本最后点点点 */
+    .p2 {
+        width: 400px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* 这个属性是一个 不规范的属性 */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        /* 仅支持webkit浏览器，比较合适WebKit浏览器或移动端 */
+        /* firefox不支持 */
+    }
+
+
+
+    /* 伪元素的方式 */
+    .p3 {
+        width: 400px;
+    }
+
+    .p3::after {
+        content: '...'
+            /* 比较靠谱简单的做法 */
+    }
+
+
+    /* 使用插件jQuery.dotdotdot的方式 */
+    .p4 {
+        width: 400px;
+        height: 40px;
+    }
+</style>
+
+<body>
+    <p class="p1">元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。 标签位于文档的头部，不包含任何内容。 标签的</p>
+    <p class="p2">
+        元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。 标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+        标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+        标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。 标签关键词。 标签
+    </p>
+    <p class="p3">
+        元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。 标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+        标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+        标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。 标签
+    </p>
+    <div class="p4">
+        元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。 标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+        标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+        标签元素可提供相关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。 标签
+    </div>
+    <script>
+        /* 使用插件jQuery.dotdotdot的方式 */
+        // http://dotdotdot.frebsite.nl/
+        $(function () {
+            $(".p4").dotdotdot({
+                wrap: 'letter',
+                ellipsis: "...",
+                /* 添加的文本为省略号 */
+                height: 2,
+                watch: true
+            });
+        })
+    </script>
+</body>
+
+</html>
