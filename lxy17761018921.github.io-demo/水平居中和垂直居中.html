@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .clearfix {
+        height: 200px;
+    }
+
+    /* 1. 行内元素水平居中 */
+    .box1 {
+        text-align: center;
+    }
+
+    /* 2. margin:0 auto */
+    .box2 {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        margin: 0 auto;
+    }
+
+    /* 3. display:flex */
+    .box3 {
+        height: 300px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 4. 已知宽度,positon */
+    .box4 {
+        width: 100px;
+        height: 100px;
+        background: pink;
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+    }
+
+    /* 未知宽度，用 positon，transfrom  */
+    .box5 {
+        width: 50px;
+        height: 100px;
+        background: peru;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0)
+    }
+
+    .box6 {
+        margin: auto;
+        width: fit-content;
+    }
+
+    /* 1. line-height */
+    .box7 {
+        height: 100px;
+        line-height: 100px;
+        border: 1px solid black;
+    }
+
+    /* 2. 已知容器高度，position,margin-top,top */
+    .box8 {
+        height: 100px;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    .b8 {
+        width: 50px;
+        height: 50px;
+        border: 1px solid red;
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+    }
+
+    /* 3. 未知容器高度，position,transform,top */
+    .box9 {
+        height: 100px;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    .b9 {
+        width: 50px;
+        height: 50px;
+        border: 1px solid blue;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%)
+    }
+
+    /* 4. flex  */
+    .box10 {
+        height: 100px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+    }
+</style>
+
+<body>
+    <!-- 水平居中 -->
+
+    <!-- 1. 行内元素水平居中 -->
+    <div class="box1">
+        <p class="p1">行内元素p</p>
+    </div>
+
+    <!-- 2. margin:0 auto -->
+    <div class="box2"></div>
+
+    <!-- 3. display:flex -->
+    <div class="box3">
+        <p style="background: darkcyan">p元素</p>
+        <span style="background: chocolate">span元素</span>
+        <div style="width: 100px;height:100px;background:blue">div元素</div>
+    </div>
+
+    <!-- 4. 已知宽度,positon -->
+    <div class="box4"></div>
+
+    <div class="clearfix"></div>
+
+    <!-- 未知宽度，用 positon，transfrom  -->
+    <div class="box5"></div>
+
+    <div class="clearfix"></div>
+
+    <!-- fit-content -->
+    <div class="box6">234</div>
+
+    <!-- 垂直居中 -->
+
+    <!-- 1. line-height -->
+    <div class="box7">23412341</div>
+
+    <!-- 2. 已知容器高度，position,margin-top,top -->
+    <div class="box8">
+        <div class="b8">sfdsfs</div>
+    </div>
+
+    <!-- 3. 未知容器高度，position,transform,top -->
+    <div class="box9">
+        <div class="b9">阿斯蒂芬萨芬</div>
+    </div>
+    <!-- 4. flex -->
+    <div class="box10">
+        <span style="background: blue">sdfsf</span>
+        <p style="background: brown">888888</p>
+    </div>
+
+</body>
+
+
+</html>
